@@ -1,32 +1,13 @@
-?
-Sphadrshenk!
-
-Trick-top?
-    Not.
+What??
+    ** xxtea crypto library for Javascript
     
-Kalisti. &risk.taking * <xml> <wron-This</d> .s a README File ** Don't <compile/> it <\x-\m=l=>
+    Based on? ** https://en.wikipedia.org/wiki/XXTEA
 
-Module! &Aron:*DED**biatch!
-
-Structure.
-
-{! next ~ wave ~ !}
-
-Structure! LoHigh! 
-Byte-orders.
-
-{! next ~ Wave ~ Mirror !}
-
-This .has::
-    * Key?Tea_Key.
-    * Block?Tea_Block.
-    * Ctl_Class?Tea.
-    * Tea_Do  &= function (mota, mo, clear)
-    * Util &= _stringToInts_ <=/> 
-    * Util &= _intsToString_ </=>
-
-{! wave ~ stop ~ Dark-ness ~ Ends. $_ `@! ``24?Primes.=4!-1 !}
-
-
-
-
+Why??
+    ** Because I found an old project of mine in the dust of past.
+    
+How??
+    ** I will explain how::
+        *) You have three Classes for dealing with XXTEA::
+            Tea, TeaBlock, TeaKey
+            
