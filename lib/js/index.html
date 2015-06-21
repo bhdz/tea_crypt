@@ -1,0 +1,113 @@
+<html>
+<head>
+
+<style>
+
+</style>
+
+<script type="text/javascript" src="./xxtea_crypto.js" >
+</script>
+
+<title> :: TESTING :: XTEA.js ::</title></head>
+
+<script type="text/javascript">
+    
+function handleStringToBlocks(form) {
+    //plainbox.value;
+    alert(form.plainbox.value);
+    alert("CreateBlock::"+xxtea_crypto.util.CreateBlock(2).toString());
+    var result = xxtea_crypto.util.StringToBlocks(form.plainbox.value, "sdsd", 2);
+    alert("block.length="+result.blocks.length);
+    var blocks = result.blocks
+    
+    var i = 0;
+    for (i = 0; i<blocks.length; i += 1) {
+        alert("blocks=" + blocks[i].toString());
+    }
+    
+    form.cryptbox.value=result.toString()
+}
+    
+function handleBlocksToString(form) {
+
+    alert(form.cryptbox.value);
+}
+function handleClickEncrypt(form)
+{
+    //console.log("handleClickEncrypt::");
+    //var plain_text = mkArray(form.plainbox.value);
+    //var key = mkArray(form.key.value);
+    //var rounds = form.rounds.value;
+
+    //echo("For encryption: " + plain_text);
+    //echo("Key: " + key);
+    //echo("Rounds: " + rounds);
+    //var crypted_text = btea(plain_text, rounds, key);
+    //echo("Result: crypted_text "+ crypted_text);
+
+    //form.cryptbox.value = crypted_text;
+    //echo("Result: plain_text "+ crypted_text);
+    //event.preventDefault(); // disable normal form submit behavior
+    return false; // prevent further bubbling of event
+}
+
+function handleClickDecrypt(form)
+{
+    echo("handleClickDecrypt: "+form);
+
+    var crypt_text = form.inputbox.value;
+    echo("You decrypted: " + crypt_text);
+
+    //alert(result)
+    //event.preventDefault(); // disable normal form submit behavior
+    return false; // prevent further bubbling of event
+}
+
+</script>
+
+<body>
+<!--
+<form name="xtea-form" onSubmit="JavaScript:handleClick()">
+Plain-text: <input type="text-field" name="plain-text">
+Password: <input type="text" name="password">
+    <input type="submit" onClick="JavaScript:handleSubmitClick()">
+</form>
+-->
+<p>
+<form name="myform" action="" method="GET">
+    <p>
+    Key: <input type="text" name="key" value="">
+    Rounds: <input type="text" name="rounds" value="">
+    </p>
+
+    <p>
+    <input type="button" name="encrypt" value="Encrypt" onClick="handleClickEncrypt(this.form)">
+    <input type="button" name="decrypt" value="Decrypt" onClick="handleClickDecrypt(this.form)">
+        
+        <input type="button" name="strtoblocks" value="StringToBlocks" onClick="handleStringToBlocks(this.form)">
+        <input type="button" name="blockstostr" value="BlocksToString" onClick="handleBlocksToString(this.form)">
+    </p>
+
+    <p>
+        Plain Text: <br/>
+        <textarea name="plainbox" cols=80 rows=24></textarea><br/>
+    </p>
+
+    <p>
+        Crypt Text: <br/>
+        <textarea name="cryptbox" cols=80 rows=24></textarea><br>
+    </p>
+</form>
+</p>
+
+<p>
+    <form name="myresultform" action="" method="GET">
+
+    <p>
+
+    </p>
+    </form>
+</p>
+
+</body>
+</html>
