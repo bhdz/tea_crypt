@@ -15,12 +15,10 @@
 function handleStringToBlocks(form) {
     //plainbox.value;
     alert(form.plainbox.value);
-    alert("CreateBlock::"+xxtea_crypto.util.CreateBlock(2).toString());
     
     //Edge cases goes first::
-    var result = xxtea_crypto.util.StringToBlocks(form.plainbox.value, "sdsd", 4);
-    
-    alert("block.length="+result.blocks.length);
+    var result = xxtea_crypto.util.StringToBlocks2(form.plainbox.value, "sdsd", 4);
+
     var blocks = result.blocks;
     
     var i = 0;
