@@ -11,19 +11,33 @@
 <title> :: TESTING :: XTEA.js ::</title></head>
 
 <script type="text/javascript">
+
+function mytestsTestUtils() {
+    var util = window.xxtea_crypto.util, block = [], ret = {};
     
+    console.log("util.BYTES_PER_BLOCK:" + util.BYTES_PER_BLOCK);
+    
+    block = util.CreateBlock(8);
+    
+    util.LogBlock(block);
+    
+    ret = util.ReadBlock(block, 8, "aaaaaaaaaaaaaaaaaaaaaaa", 0, "cccc");
+    console.log("ret.last_block:" + ret.last_block);
+    util.LogBlock(block);
+}
+
 function handleStringToBlocks(form) {
     //plainbox.value;
-    var utils = xxtea_crypto.util;
+    var util = xxtea_crypto.util;
     
     
-    var block = xxtea_crypto.util.CreateBlock(16);
-    alert(block.toString());
+    var block = util.CreateBlock(16);
     
     var block2 = xxtea_crypto.util.CreateBlock(8);
     alert(block2.toString());
     
-    var last = xxtea_crypto.util.InitializeBlock(block, 16, "aaaaaaaaaaaaaaaaaaaaaaa",0, "1234");
+    var last = xxtea_crypto.util.ReadBlock(block, 16, "aaaaaaaaaaaaaaaaaaaaaaa",0, "1234");
+    
     //alert(block.toString());
     
     //last = xxtea_crypto.util.InitializeBlock(block2, 8, "asdasdadasd",0, "1234");
@@ -94,11 +108,12 @@ Password: <input type="text" name="password">
     </p>
 
     <p>
-    <input type="button" name="encrypt" value="Encrypt" onClick="handleClickEncrypt(this.form)">
-    <input type="button" name="decrypt" value="Decrypt" onClick="handleClickDecrypt(this.form)">
+    <input type="button" name="encrypt" value="Encrypt" onClick="handleClickEncrypt(this.form)" />
+    <input type="button" name="decrypt" value="Decrypt" onClick="handleClickDecrypt(this.form)" />
         
-        <input type="button" name="strtoblocks" value="StringToBlocks" onClick="handleStringToBlocks(this.form)">
-        <input type="button" name="blockstostr" value="BlocksToString" onClick="handleBlocksToString(this.form)">
+        <input type="button" name="strtoblocks" value="StringToBlocks" onClick="handleStringToBlocks(this.form)" />
+        <input type="button" name="blockstostr" value="BlocksToString" onClick="handleBlocksToString(this.form)" />
+        <input type="button" name="test_utils" value="TestUtils" onClick="mytestsTestUtils()" />
     </p>
 
     <p>
