@@ -13,17 +13,19 @@
 <script type="text/javascript">
 
 function mytestsTestUtils() {
-    var util = window.xxtea_crypto.util, block = [], ret = {};
+    var util = window.xxtea_crypto.util, block = [], ret = {}, text = "";
     
     console.log("util.BYTES_PER_BLOCK:" + util.BYTES_PER_BLOCK);
     
     block = util.CreateBlock(16);
     
     util.LogBlock(block);
-    
-    ret = util.ReadBlock(block, 16, "aaaabbbbccccddddeeeeffff", 0, "cccc");
+    text = "aaaabbbbccccddddeeeeffff";
+    ret = util.ReadBlock(block, 16, text, 0, "cccc");
     console.log("ret.last_block:" + ret.last_block);
     util.LogBlock(block);
+    
+    ret = util.WriteBlock(block, text, 0);
 }
 
 function handleStringToBlocks(form) {
