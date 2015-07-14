@@ -17,11 +17,11 @@ function mytestsTestUtils() {
     
     console.log("util.BYTES_PER_BLOCK:" + util.BYTES_PER_BLOCK);
     
-    block = util.CreateBlock(8);
+    block = util.CreateBlock(16);
     
     util.LogBlock(block);
     
-    ret = util.ReadBlock(block, 8, "aaaaaaaaaaaaaaaaaaaaaaa", 0, "cccc");
+    ret = util.ReadBlock(block, 16, "aaaabbbbccccddddeeeeffff", 0, "cccc");
     console.log("ret.last_block:" + ret.last_block);
     util.LogBlock(block);
 }
