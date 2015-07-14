@@ -1,8 +1,3 @@
-For Dobry:
-Kopele tova e stariat algoritum 
-bez izmenoiasht se 256 bitov kluch 
-NO s noviat shell!
-pishi dir i vish kvo stava! :))
 
 Author:
 Boril Boyanov
